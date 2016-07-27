@@ -1,0 +1,55 @@
+5
+
+已有的：算法、设计模式、框架， 都是现有的、重复的问题。 10:19 2016-7-26  不是创新性的问题。  刷了这些重复的问题。 10:20 2016-7-26
+
+分布式系统，编程。  13:45 2016-7-25
+
+Java 反射技术 的学习 及应用。  19:38 2016-7-24
+
+消息队列，Listener 13:45 2016-6-22
+
+代码里面类，没有注释，方法没有注释。看着，真的一点都不亲切。 15:52 16/6/20
+
+字符组成的命令，是不满足交换律的，所以敲字符的时候， 注意顺序。  15:11 16/6/20
+
+IDEA,  Ctrl + Shift + A ,Reimport all maven Project18:08 2016-6-13
+
+OA流程申请，文字描述200字太小，申请的流程，不支持编辑/删除。10:23 2016/5/27
+
+Tower文档编辑功能，不包含文档预览功能。10:57 2016/5/26
+
+'CowfishAdminNodeServer' debug的时候，需要配置npmrc（找张三李四下载）16:18 2016/5/24
+
+Win + R，不能运行文件带“.”的快捷方式。10:18 2016/5/17
+
+前端测试与后端测试分离，gulp。11:12 2016/5/16
+
+gulp debug
+后，浏览器地址，要追加项目名称到具体HTML文件的相对路径。17:23 2016/5/13
+
+
+D:\Users\tanlw\workspace\CashLoan\CowfishFE\FE.admin  目录下安装gulp
+使用命令：npm install --save-dev gulp 安装， 安装步骤见“FE.admin\README.md”
+15:09 2016/5/13
+添加对应的环境变量：D:\Users\tanlw\workspace\CashLoan\CowfishFE\FE.admin\node_modules\.bin
+后使用gulp命令 安装其它插件。
+15:14 2016/5/13
+
+敏捷开发 sprint	  10:35 2016/5/12
+
+select afc.appid, afc.userid, afc.principal, afc.MoneyTransferredOn, afc.bankName, afc.bankAccount, afc.overdueStatus, afc.dfReqTime, yjcr.success, yjcr.service, yjcr.orderNo, yjcr.resultCode, yjcr.resultMessage from
+(SELECT * FROM dbo.AppFundCashierSnapshotObjects where MoneyTransferredOn is not null and appcategory='CL') afc
+left join dbo.YijiContractObjects yjc on yjc.AppId=afc.AppId
+left join dbo.YijiCommonResponseObjects yjcr on yjcr.appid=afc.appid
+where yjc.ContractNo is NULL and yjcr.service='InstallmentSign'
+and not exists (select 1 from
+(SELECT AppId FROM dbo.AppFundCashierSnapshotObjects where MoneyTransferredOn is not null and appcategory='CL' and AppId = afc.AppId) afc_inner
+left join dbo.YijiContractObjects yjc_inner on yjc_inner.AppId=afc_inner.AppId
+left join dbo.YijiCommonResponseObjects yjcr_inner on yjcr_inner.appid=afc_inner.appid
+where yjc_inner.ContractNo is not NULL and yjcr_inner.service='InstallmentSign');
+10:34 2016/5/12
+
+use mysql;
+update user u set u.`Password` = 'root' where u.`User` = 'root';
+use mysql;
+update user set password = `root` where user = `root`;
